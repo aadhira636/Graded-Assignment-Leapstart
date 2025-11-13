@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        *{
+            background-color: rgb(233, 175, 248);
+            text-align: center;
+        }
+        #result{
+            background-color: transparent;
+        }
+        .result-div button{
+            margin-top: 20px;
+            height: 40px;
+            width: 150px;
+            margin-left: 20px;
+            font-weight: 0;
+            background-color: #5bafd6;
+        }
+        .result-div button:hover{
+            background-color: #38a4ba;
+            cursor: pointer;
+        }
+        .result-div p{
+            font-size: larger;
+            font-weight: 700;
+            color: rgb(42, 112, 170);
+        }
+        .first-div{
+            margin-top: 280px;
+        }
+        .first-div label{
+            font-weight: 5000;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .first-div h2{
+            text-align: center;
+            color: rgb(42, 112, 170);
+        }
+    </style>
+<body>
+    <div class="first">
+        <div class="first-div">
+            <h2>SUM OF FIRST N NUMBERS</h2>
+            <label for="inputNumber">Enter a number :</label>
+            <input type="number" id="inputNumber">
+        </div>
+        <div class = "result-div">
+            <button onclick="calculateSum()">Calculate Sum</button>
+            <p id="result"></p>
+        </div>
+    </div>
+    <script>
+        function calculateSum(){
+            const inputValue = document.getElementById("inputNumber").value;
+            const n = Number(inputValue);
+
+            let sum = 0;
+            for (let i = 1; i <= n; i++) {
+                sum = sum + i;
+            }
+            document.getElementById("result").innerText = "Sum of all the numbers until the given number is " + sum;
+        }
+    </script>
+</body>
+</html>
